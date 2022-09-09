@@ -21,6 +21,12 @@ const run = async () => {
   try {
     //DB client connect
     await client.connect();
+
+    //Collections
+    const productsCollection = client
+      .db("product_listing")
+      .collection("products");
+    const cartCollection = client.db("product_listing").collection("cart");
   } finally {
     // Server is running
   }
